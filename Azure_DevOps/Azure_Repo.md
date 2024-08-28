@@ -55,4 +55,75 @@ Once Done Click Import
 
 <img width="533" alt="image" src="https://github.com/user-attachments/assets/353133cf-e588-402b-bc4d-6914e6251aa3">
 
-  
+
+## Creating New Repository and uploading Repository from local to Azure Repo
+**1. Create Repository**
+
+On Dropdown on Top > Click New Repository
+
+<img width="404" alt="image" src="https://github.com/user-attachments/assets/12bd0f5c-8e90-4e57-8b2e-a98df5a77d92">
+
+
+On create a Repository Window, Fill in Repository Name > Click "Create"
+
+<img width="227" alt="image" src="https://github.com/user-attachments/assets/4970f48d-8bbc-434d-bb85-818185795ac3">
+
+**2. Clone New Repistory created from Azure Repo**
+
+Click "Clone" on top right
+
+<img width="785" alt="image" src="https://github.com/user-attachments/assets/9506a107-5b7e-4721-bf5b-06005663d33d">
+
+Click Generate Git Credentials 
+
+<img width="226" alt="image" src="https://github.com/user-attachments/assets/9ffe2d1b-0b1d-491e-9a99-c3601f0da6ea">
+
+Copy all details
+
+<img width="223" alt="image" src="https://github.com/user-attachments/assets/fa916e10-c0cc-4acd-bc32-4951f826c876">
+
+Run below command on local server to clone Azure repo locally
+
+```bash
+mkdir azurerepo && cd azurerepo
+git clone https://nojazuredevopsdemo@dev.azure.com/nojazuredevopsdemo/helloworld/_git/hello-world
+```
+
+Verify hello-world directory is cloned
+
+<img width="339" alt="image" src="https://github.com/user-attachments/assets/a9deadc8-1c2a-4de8-8111-170943cd57eb">
+
+
+**3. Copy files to azurerepo directory and push to Azurerepo**
+
+Copy Files to hello-world directory
+
+```bash
+cp -a helloworld/* azurerepo/hello-world/
+```
+
+Note: Only copy source code. If there is a .git directory, it should not be copied
+
+Add the new files
+
+```bash
+git add .
+```
+
+Commit added files
+```bash
+git commit -m "Initial Commit"
+```
+
+Push new files to Azure Repository
+```bash
+git push
+```
+
+**4. Verify from Azure repo**
+
+<img width="313" alt="image" src="https://github.com/user-attachments/assets/e755b73c-df4c-4cc8-ab63-d6f342b6431a">
+
+
+
+
